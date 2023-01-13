@@ -15,7 +15,7 @@ const StudentCardList = () => {
   }, []);
 
   return (
-  <div className="m-28 min-h-screen overflow-y-scroll w-96 rounded-xl shadow-md">
+  <div className="mt-32 mr-auto mb-0 ml-auto overflow-y-scroll max-w-xl rounded-xl shadow-md">
     {students.map(student => {
         return <StudentCard student={student} />
     })}

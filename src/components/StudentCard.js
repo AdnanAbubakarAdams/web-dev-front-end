@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { GrAdd } from "react-icons/gr";
+import { IoMdRemove } from "react-icons/io";
 
 const StudentCard = ({ student }) => {
 
@@ -17,27 +19,27 @@ const StudentCard = ({ student }) => {
   return (
     <div className='flex gap-x-6 bg-white min-h-160px border-b-gray-700 px-5 py-2'>
         <div className='h-full w-full'>
-            <img src={pic} alt="" className='rounded-full w-full'/>
+            <img src={pic} alt="" className='rounded-[50%] w-1/2'/>
         </div>
         <div className='w-[80%]'>
-          <div className='student_name'>
+          <div className='text-lg font-semibold uppercase tracking-wider mb-2'>
             {firstName} {lastName}
           </div>
-          <div className='student_info'>
+          <div className='text-gray-600 ml-3  text-sm pb-1'>
               <div> Email: {email}</div>
               <div> Company: {company}</div>
               <div> Skill: {skill}</div>
-              <div className='grades' style={{"display" : showGrades ? "block" : "none"}}>
+              <div className='mt-2' style={{"display" : showGrades ? "block" : "none"}}>
                   {grades.map((grade, index) => {
-                    return <div className='grade' key={index + 1}><span>Test {index + 1}:</span><span>{grades}%</span></div>
+                    return <div className='flex w-24 justify-between' key={index + 1}><span>Test {index + 1}:</span><span>{grade}%</span></div>
                   })}
               </div>
           </div>
         </div>
-        {/* <div className='toggleGrades'>
-          {!showGrades && <Add onClick={toggleGrades} />}
-          {showGrades && <Remove onClick={toggleGrades} />}
-        </div> */}
+        <div className='text-gray-600 text-4xl font-semibold hover:text-black'>
+          {!showGrades && <GrAdd onClick={toggleGrades} />}
+          {showGrades && <IoMdRemove onClick={toggleGrades} />}
+        </div>
     </div>
   )
 }
