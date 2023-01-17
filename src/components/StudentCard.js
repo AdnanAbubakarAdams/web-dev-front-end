@@ -17,15 +17,15 @@ const StudentCard = ({ student }) => {
   }
 
   return (
-    <div className='flex gap-x-6 bg-white min-h-160px border-b-gray-700 px-5 py-2'>
-        <div className='h-full w-full'>
-            <img src={pic} alt="" className='rounded-[50%] w-1/2'/>
+    <div className='flex column-gap-4 bg-white min-h-40 border-b-gray-700 px-5 py-2'>
+        <div className='w-1/4 h-40'>
+            <img src={pic} alt="" className='rounded-full w-full h-full border-2'/>
         </div>
-        <div className='w-[80%]'>
-          <div className='text-lg font-semibold uppercase tracking-wider mb-2'>
+        <div className='w-3/4 pl-4'>
+          <div className='text-lg font-semibold uppercase tracking-wider ml-4 mt-6 mb-2'>
             {firstName} {lastName}
           </div>
-          <div className='text-gray-600 ml-3  text-sm pb-1'>
+          <div className='text-gray-600 ml-7 text-sm pb-1'>
               <div> Email: {email}</div>
               <div> Company: {company}</div>
               <div> Skill: {skill}</div>
@@ -36,7 +36,7 @@ const StudentCard = ({ student }) => {
               </div>
           </div>
         </div>
-        <div className='text-gray-600 text-4xl font-semibold hover:text-black'>
+        <div className='text-gray-600 text-4xl font-semibold mt-6 hover:text-black'>
           {!showGrades && <GrAdd onClick={toggleGrades} />}
           {showGrades && <IoMdRemove onClick={toggleGrades} />}
         </div>
